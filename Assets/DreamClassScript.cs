@@ -2,14 +2,17 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+
 
 public class DreamClassScript : MonoBehaviour
 {
     private bool isNightmare = false;
     private float dreamTimer = 3.0f;
     private int dreamPoint = 1;
-    private int dreamType = -1;
+    private int dreamType = 2;
     private string dreamText = "Test Dream";
+    private int attackDreamType = -1;
     public GameObject GODream;
 
     public DreamClassScript()
@@ -64,13 +67,36 @@ public class DreamClassScript : MonoBehaviour
         // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Destroy(GODream, 2.0f);
-        Debug.Log(dreamPoint.ToString());
+        DreamBehaviour();
+        //Destroy(GODream, 2.0f);
+        //Debug.Log(dreamPoint.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void DreamBehaviour()
+    {
+        while (dreamTimer != 0.0f && dreamType != attackDreamType)
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                attackDreamType = 2;
+            }
+
+            if (dreamType == attackDreamType)
+            {
+                Destroy(GODream, 2.0f);
+                Debug.Log("Correct Dream Type attack! You get 1 points!");
+                Debug.Log(dreamPoint.ToString());
+            }
+            else
+            {
+                Debug.Log("The Dream Type is not the correct one to destroy");
+            }
+        }
     }
 }
