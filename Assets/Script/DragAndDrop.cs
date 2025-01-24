@@ -1,3 +1,5 @@
+using Unity.Mathematics;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -5,6 +7,7 @@ using UnityEngine.Rendering;
 public class DragAndDrop : MonoBehaviour
 {
     Vector3 mousePositionOffset;
+    public int objType = 0;
 
     private Vector3 GetMouseWorldPosition()
     {
@@ -21,5 +24,15 @@ public class DragAndDrop : MonoBehaviour
     private void OnMouseDrag()
     {
         transform.position=GetMouseWorldPosition()+mousePositionOffset;
+    }
+
+    void Start()
+    {
+        SetObjectType();
+    }
+    public void SetObjectType()
+    {
+        objType = UnityEngine.Random.Range(1, 2);
+        Debug.Log(objType.ToString());
     }
 }
