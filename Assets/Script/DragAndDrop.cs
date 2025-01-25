@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -6,9 +7,13 @@ using UnityEngine.Rendering;
 public class DragAndDrop : MonoBehaviour
 {
     private bool isDragged=false;
+    private int objectType;
+    private string objectSpriteName = "";
+    private string dreamTypeName = "";
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
-    private string objectSpriteName = "";
+    private GameObject objItem;
+    //public GameObject dreamGObject;
 
     public enum ObjectType
     {
@@ -23,8 +28,12 @@ public class DragAndDrop : MonoBehaviour
         isDragged=true;
         mouseDragStartPosition=Camera.main.ScreenToWorldPoint(Input.mousePosition);
         objectSpriteName = GetComponent<SpriteRenderer>().sprite.name;
-        Debug.Log(objectSpriteName);
         spriteDragStartPosition =transform.localPosition;
+
+        if (objectSpriteName.Contains("Plush"))
+        {
+            objectType = (int) ObjectType.Water;
+        }
     }
 
     private void OnMouseDrag()
@@ -50,6 +59,17 @@ public class DragAndDrop : MonoBehaviour
         if (dreamObject == null)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        objItem = collision.gameObject;
+
+        if (objItem != null)
+        {
+            Debug.Log("Object Hit!!");
+            Debug.Log(objItem.name);
         }
     }
 }

@@ -15,6 +15,7 @@ public class DreamClassScript : MonoBehaviour
     private readonly int attackDreamType = -1;
     private string dreamSpriteName = "";
     public GameObject GODream;
+    public GameObject objItem;
     public bool destroyDream = false;
 
     public enum DreamType
@@ -137,8 +138,14 @@ public class DreamClassScript : MonoBehaviour
             //Debug.Log(dreamTimer.ToString());
     }
 
-    //public void DreamBehaviour()
-    //{
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        objItem = collision.gameObject;
 
-    //}
+        if (objItem != null)
+        {
+            Debug.Log("Object Hit!!");
+            Debug.Log(objItem.name);
+        }
+    }
 }
