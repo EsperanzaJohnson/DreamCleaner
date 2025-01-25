@@ -4,6 +4,7 @@ Shader "Custom/BlackMask"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _HoleSize ("Hole Size", Float) = 0.2
+        _BlurSize ("Blur Size", Float) = 0.5
         _CursorPosition ("Cursor Position", Vector) = (0,0.5,0,0)
     }
     SubShader
@@ -39,6 +40,7 @@ Shader "Custom/BlackMask"
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float _HoleSize;
+            float _BlurSize;
             float2 _CursorPosition;
 
             v2f vert(appdata_t v)
@@ -58,7 +60,7 @@ Shader "Custom/BlackMask"
 
                 float dist = distance(uv, _CursorPosition); 
                 
-                float alpha = step(_HoleSize, dist);
+                float alpha = smoothstep(_HoleSize, _HoleSize + _BlurSize, dist);
 
                 half4 col = tex2D(_MainTex, i.uv);
                 col.a *= alpha;
