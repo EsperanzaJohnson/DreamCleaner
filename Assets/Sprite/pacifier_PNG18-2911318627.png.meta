@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pacifier_PNG18-2911318627_0: 5314043064824761935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      water-glass-icon-png-1748462954_0: -392129781136321325
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
