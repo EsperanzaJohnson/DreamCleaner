@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dream_buster_start_screen_0: -8471453683129298527
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
