@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -6,14 +5,14 @@ using UnityEngine.Rendering;
 
 public class DragAndDrop : MonoBehaviour
 {
-    private bool isDragged=false;
+    private bool isDragged = false;
     public int objectType;
     private string objectSpriteName = "";
     private string dreamTypeName = "";
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
     private GameObject objItem;
-    //public GameObject dreamGObject;
+    public spawnItems Spawner;
 
     public enum ObjectType
     {
@@ -25,14 +24,14 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        isDragged=true;
-        mouseDragStartPosition=Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        isDragged = true;
+        mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         objectSpriteName = GetComponent<SpriteRenderer>().sprite.name;
-        spriteDragStartPosition =transform.localPosition;
+        spriteDragStartPosition = transform.localPosition;
 
         if (objectSpriteName.Contains("Plush"))
         {
-            objectType = (int) ObjectType.Water;
+            objectType = (int)ObjectType.Water;
             Debug.Log("Object Type");
             Debug.Log(objectType.ToString());
         }
@@ -55,24 +54,14 @@ public class DragAndDrop : MonoBehaviour
         if (trashCan != null)
         {
             Destroy(gameObject);
+            Spawner.currentlySpawned--;
         }
-
-        
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         objItem = collision.gameObject;
-        //Collider2D dreamObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("Dream"));
-        //if (dreamObject == null)
-        //{
-            Destroy(gameObject);
-        //}
-        if (objItem != null)
-        {
-            //Debug.Log("Object Hit!!");
-            //Debug.Log("This is the object Drag and Drop");
-            //Debug.Log(objItem.name);
-        }
+        Destroy(gameObject);
+        Spawner.currentlySpawned--;
     }
+
 }

@@ -12,7 +12,7 @@ public class DreamClassScript : MonoBehaviour
     private int dreamPoint = 1;
     private int dreamType;
     private string dreamText = "Test Dream";
-    private readonly int attackDreamType = -1;
+    private int attackDreamType = -1;
     private string dreamSpriteName = "";
     public GameObject GODream;
     public GameObject objItem;
@@ -63,17 +63,17 @@ public class DreamClassScript : MonoBehaviour
         dreamPoint = newDreamPoint;
     }
 
-   public void setDreamText(string newDreamText)
+    public void setDreamText(string newDreamText)
     {
         dreamText = newDreamText;
     }
 
     public void Pop()
     {
-    
+
 
     }
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         dreamSpriteName = GetComponent<SpriteRenderer>().sprite.name;
@@ -124,13 +124,13 @@ public class DreamClassScript : MonoBehaviour
             {
                 Destroy(GODream);
                 dreamPoint = -1;
-                Debug.Log("The Dream Type is not the correct one to destroy -1 points");               
+                Debug.Log("The Dream Type is not the correct one to destroy -1 points");
                 Debug.Log(dreamPoint.ToString());
             }
         }
 
-        
-            //Debug.Log(dreamTimer.ToString());
+
+        //Debug.Log(dreamTimer.ToString());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
