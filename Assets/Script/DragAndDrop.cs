@@ -4,22 +4,35 @@ using UnityEngine.Rendering;
 
 public class DragAndDrop : MonoBehaviour
 {
-    Vector3 mousePositionOffset;
-
-    private Vector3 GetMouseWorldPosition()
-    {
-        //Capture mouse position and return WorldPosition
-        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
+    private bool isDragged=false;
+    private Vector3 mouseDragStartPosition;
+    private Vector3 spriteDragStartPosition;
+   
     
     private void OnMouseDown()
     {
-        //Capture the mouse offset
-        mousePositionOffset=gameObject.transform.position-GetMouseWorldPosition();
+        isDragged=true;
+        mouseDragStartPosition=Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        spriteDragStartPosition=transform.localPosition;
     }
 
     private void OnMouseDrag()
     {
-        transform.position=GetMouseWorldPosition()+mousePositionOffset;
+        if(isDragged)
+        {
+            transform.localPosition=spriteDragStartPosition+(Camera.main.ScreenToWorldPoint(Input.mousePosition)-mouseDragStartPosition);
+
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        isDragged=false;
+        
+        Collider2D trashCan = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TrashCan"));
+        if (trashCan != null)
+        {
+            Destroy(gameObject);
+        }
     }
 }
