@@ -9,14 +9,13 @@ public class DreamClassScript : MonoBehaviour
 {
     private bool isNightmare = false;
     private float dreamTimer = 5.0f;
-    private int dreamPoint = 1;
+    public int dreamPoint = 1;
     private int dreamType;
     private string dreamText = "Test Dream";
     private int attackDreamType = -1;
     private string dreamSpriteName = "";
     public GameObject GODream;
-    public GameObject objItem;
-    public bool destroyDream = false;
+    public GameObject GOItem;
 
     public enum DreamType
     {
@@ -99,27 +98,14 @@ public class DreamClassScript : MonoBehaviour
                 }
             }
         }
-        Debug.Log(dreamType.ToString());
-        //DreamBehaviour();
-        //Destroy(GODream, 2.0f);
-        //Debug.Log(dreamPoint.ToString());
+        //Debug.Log(dreamType.ToString());
+
     }
 
     // Update is called once per frame
     void Update()
     {
         dreamTimer -= Time.deltaTime;
-
-        if (dreamType == attackDreamType)
-        {
-            Destroy(GODream);
-            dreamPoint = 1;
-            Debug.Log("Correct Dream Type attack! You get 1 points!");
-            Debug.Log(dreamPoint.ToString());
-            destroyDream = true;
-        }
-        else
-        {
             if (dreamTimer <= 0.0f)
             {
                 Destroy(GODream);
@@ -127,7 +113,6 @@ public class DreamClassScript : MonoBehaviour
                 Debug.Log("The Dream Type is not the correct one to destroy -1 points");
                 Debug.Log(dreamPoint.ToString());
             }
-        }
 
 
         //Debug.Log(dreamTimer.ToString());
@@ -135,18 +120,15 @@ public class DreamClassScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        objItem = collision.gameObject;
-        //Collider2D teddyBearObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TeddyBear"));
-        //if (teddyBearObject != null)
-        //{
-        Destroy(gameObject);
-        //}
-
-        if (objItem != null)
+        GOItem = collision.gameObject;
+        if (dreamType == attackDreamType)
         {
-            Debug.Log("Object Hit!!");
-            Debug.Log("This is the object Dream");
-            Debug.Log(objItem.name);
+            GOItem = collision.gameObject;
+            dreamPoint = 1;
+            Destroy(GODream);
+            Debug.Log("Correct Dream Type attack! You get 1 points!");
+            Debug.Log(dreamPoint.ToString());
+
         }
     }
 }
