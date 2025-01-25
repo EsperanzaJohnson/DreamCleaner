@@ -39,7 +39,7 @@ public class DragAndDrop : MonoBehaviour
         Collider2D dreamObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("Dream"));
         if (dreamObject == null)
         {
-            Destroy(gameObject);
+            
         }
     }
 }
