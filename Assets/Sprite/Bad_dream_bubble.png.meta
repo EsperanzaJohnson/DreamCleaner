@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bad_dream_bubble_0: -8580545777824418961
+      Bad_dream_bubble_1: -7348214574011446562
+      Bad_dream_bubble_2: -7797852898855506218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
