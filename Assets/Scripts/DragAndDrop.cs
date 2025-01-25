@@ -5,17 +5,36 @@ using UnityEngine.Rendering;
 
 public class DragAndDrop : MonoBehaviour
 {
-    private bool isDragged=false;
+    private bool isDragged = false;
+    public int objectType;
+    private string objectSpriteName = "";
+    private string dreamTypeName = "";
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
+    private GameObject objItem;
     public spawnItems Spawner;
-   
-    
+
+    public enum ObjectType
+    {
+        Alcohol = -2,
+        Tea = -1,
+        Water = 0,
+        Teddy = 1
+    }
+
     private void OnMouseDown()
     {
-        isDragged=true;
-        mouseDragStartPosition=Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        spriteDragStartPosition=transform.localPosition;
+        isDragged = true;
+        mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        objectSpriteName = GetComponent<SpriteRenderer>().sprite.name;
+        spriteDragStartPosition = transform.localPosition;
+
+        if (objectSpriteName.Contains("Plush"))
+        {
+            objectType = (int)ObjectType.Water;
+            Debug.Log("Object Type");
+            Debug.Log(objectType.ToString());
+        }
     }
 
     private void OnMouseDrag()
@@ -37,11 +56,12 @@ public class DragAndDrop : MonoBehaviour
             Destroy(gameObject);
             Spawner.currentlySpawned--;
         }
-
-        Collider2D dreamObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("Dream"));
-        if (dreamObject == null)
-        {
-            //Destroy(gameObject);
-        }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        objItem = collision.gameObject;
+        Destroy(gameObject);
+        Spawner.currentlySpawned--;
+    }
+
 }

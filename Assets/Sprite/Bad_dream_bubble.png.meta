@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ce424fb4918cd59459e3a7d34612599f
+guid: 34221906f635ff34ca80d04e7a12d8fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5971781146285802778
-    second: Orphans(AIGen)_0
+      213: -8580545777824418961
+    second: Bad_dream_bubble_0
+  - first:
+      213: -7348214574011446562
+    second: Bad_dream_bubble_1
+  - first:
+      213: -7797852898855506218
+    second: Bad_dream_bubble_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orphans(AIGen)_0
+      name: Bad_dream_bubble_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1887
-        height: 1080
+        x: 2
+        y: 2
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a158dbc005700e250800000000000000
-      internalID: 5971781146285802778
+      spriteID: f633cc5a317cbe880800000000000000
+      internalID: -8580545777824418961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bad_dream_bubble_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 2
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda03b607c5e50a90800000000000000
+      internalID: -7348214574011446562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bad_dream_bubble_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 8
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dea7f07a1678c390800000000000000
+      internalID: -7797852898855506218
       vertices: []
       indices: 
       edges: []
@@ -147,8 +197,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Orphans(AIGen)_0: 5971781146285802778
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

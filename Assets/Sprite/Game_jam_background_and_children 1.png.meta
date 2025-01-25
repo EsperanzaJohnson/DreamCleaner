@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ce424fb4918cd59459e3a7d34612599f
+guid: e91b1290fc5bd334daa218f25a8c01d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5971781146285802778
-    second: Orphans(AIGen)_0
+      213: 2063438971127764267
+    second: Game_jam_background_and_children 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orphans(AIGen)_0
+      name: Game_jam_background_and_children 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1887
-        height: 1080
+        width: 480
+        height: 270
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a158dbc005700e250800000000000000
-      internalID: 5971781146285802778
+      spriteID: b2594c9cfcec2ac10800000000000000
+      internalID: 2063438971127764267
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Orphans(AIGen)_0: 5971781146285802778
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
