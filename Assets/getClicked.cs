@@ -1,7 +1,9 @@
+using UnityEditor;
 using UnityEngine;
 
 public class getClicked : MonoBehaviour
 {
+    public
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +22,6 @@ public class getClicked : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             Destroy(this.gameObject);
-            
         }
     }
 }
