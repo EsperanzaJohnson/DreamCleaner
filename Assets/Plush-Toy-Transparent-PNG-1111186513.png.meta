@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Plush-Toy-Transparent-PNG-1111186513_0: -946005780021462682
+      Plush-Toy-Transparent-PNG-1111186513_1: 1066088778510093043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
