@@ -10,14 +10,19 @@ public class spawnItems : MonoBehaviour
 
     private void spawnItem(GameObject item)
     {
-        Instantiate(item);
-        item.transform.position = new Vector2(Random.Range(-9, 9), Random.Range(-4, 4)); 
+        GameObject spawnedItem = Instantiate(item);
+        item.transform.position = new Vector2(Random.Range(-9, 9), Random.Range(-4, 4));
+        getClicked clickedScript = spawnedItem.GetComponent<getClicked>();
+        if (clickedScript != null)
+        {
+            clickedScript.Spawner = this;
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+
     }
 
 
