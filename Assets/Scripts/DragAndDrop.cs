@@ -8,6 +8,7 @@ public class DragAndDrop : MonoBehaviour
     private bool isDragged=false;
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
+    public spawnItems Spawner;
    
     
     private void OnMouseDown()
@@ -34,12 +35,13 @@ public class DragAndDrop : MonoBehaviour
         if (trashCan != null)
         {
             Destroy(gameObject);
+            Spawner.currentlySpawned--;
         }
 
         Collider2D dreamObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("Dream"));
         if (dreamObject == null)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
