@@ -123,7 +123,7 @@ public class DreamClassScript : MonoBehaviour
     {
         GOItem = collision.gameObject;
         //Debug.Log(GOItem.gameObject.name);
-        if ((GOItem.gameObject.name.Contains("Triangle")))
+        if ((GOItem.gameObject.name.Contains("1")))
         {
             attackDreamType = 0;
         }
