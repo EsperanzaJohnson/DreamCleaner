@@ -15,6 +15,7 @@ public class DreamClassScript : MonoBehaviour
     private int attackDreamType = -1;
     private string dreamSpriteName = "";
     public GameObject GODream;
+    public DragAndDrop dadItem;
     public GameObject GOItem;
 
     public enum DreamType
@@ -121,6 +122,15 @@ public class DreamClassScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GOItem = collision.gameObject;
+        //Debug.Log(GOItem.gameObject.name);
+        if ((GOItem.gameObject.name.Contains("1")))
+        {
+            attackDreamType = 0;
+        }
+
+        {
+            
+        }
         if (dreamType == attackDreamType)
         {
             GOItem = collision.gameObject;
