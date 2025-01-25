@@ -8,9 +8,9 @@ using UnityEditor;
 public class DreamClassScript : MonoBehaviour
 {
     private bool isNightmare = false;
-    private float dreamTimer = 10.0f;
+    private float dreamTimer = 5.0f;
     private int dreamPoint = 1;
-    private int dreamType = 1;
+    private int dreamType;
     private string dreamText = "Test Dream";
     private int attackDreamType = -1;
     private string dreamSpriteName = "";
