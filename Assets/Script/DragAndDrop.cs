@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 public class DragAndDrop : MonoBehaviour
 {
     private bool isDragged=false;
-    private int objectType;
+    public int objectType;
     private string objectSpriteName = "";
     private string dreamTypeName = "";
     private Vector3 mouseDragStartPosition;
@@ -33,6 +33,8 @@ public class DragAndDrop : MonoBehaviour
         if (objectSpriteName.Contains("Plush"))
         {
             objectType = (int) ObjectType.Water;
+            Debug.Log("Object Type");
+            Debug.Log(objectType.ToString());
         }
     }
 
@@ -55,21 +57,22 @@ public class DragAndDrop : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Collider2D dreamObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("Dream"));
-        if (dreamObject == null)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         objItem = collision.gameObject;
-
+        //Collider2D dreamObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("Dream"));
+        //if (dreamObject == null)
+        //{
+            Destroy(gameObject);
+        //}
         if (objItem != null)
         {
-            Debug.Log("Object Hit!!");
-            Debug.Log(objItem.name);
+            //Debug.Log("Object Hit!!");
+            //Debug.Log("This is the object Drag and Drop");
+            //Debug.Log(objItem.name);
         }
     }
 }

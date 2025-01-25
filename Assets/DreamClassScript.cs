@@ -109,11 +109,6 @@ public class DreamClassScript : MonoBehaviour
     void Update()
     {
         dreamTimer -= Time.deltaTime;
-        Collider2D teddyBearObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TeddyBear"));
-        if (teddyBearObject != null)
-        {
-            Destroy(gameObject);
-        }
 
         if (dreamType == attackDreamType)
         {
@@ -141,10 +136,16 @@ public class DreamClassScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         objItem = collision.gameObject;
+        //Collider2D teddyBearObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TeddyBear"));
+        //if (teddyBearObject != null)
+        //{
+        Destroy(gameObject);
+        //}
 
         if (objItem != null)
         {
             Debug.Log("Object Hit!!");
+            Debug.Log("This is the object Dream");
             Debug.Log(objItem.name);
         }
     }
