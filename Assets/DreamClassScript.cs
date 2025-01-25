@@ -8,7 +8,7 @@ using UnityEditor;
 public class DreamClassScript : MonoBehaviour
 {
     private bool isNightmare = false;
-    private float dreamTimer = 3.0f;
+    private float dreamTimer = 10.0f;
     private int dreamPoint = 0;
     private int dreamType = 1;
     private string dreamText = "Test Dream";
@@ -76,10 +76,11 @@ public class DreamClassScript : MonoBehaviour
     void Update()
     {
         dreamTimer -= Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                attackDreamType = 1;
-            }
+        Collider2D teddyBearObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TeddyBear"));
+        if (teddyBearObject != null)
+        {
+            Destroy(gameObject);
+        }
 
         if (dreamType == attackDreamType)
         {

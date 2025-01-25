@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 
+
 public class DragAndDrop : MonoBehaviour
 {
     private bool isDragged=false;
@@ -31,6 +32,12 @@ public class DragAndDrop : MonoBehaviour
         
         Collider2D trashCan = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TrashCan"));
         if (trashCan != null)
+        {
+            Destroy(gameObject);
+        }
+
+        Collider2D dreamObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("Dream"));
+        if (dreamObject == null)
         {
             Destroy(gameObject);
         }
