@@ -47,7 +47,7 @@ ExportedObj/
 *.opendb
 *.VC.db
 *.idea
-Assets/Path/To/BlackMask*.mat
+Assets/Player/BlackMaskMat*.mat
 
 
 # Unity3D generated meta files
