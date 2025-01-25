@@ -8,13 +8,22 @@ using UnityEditor;
 public class DreamClassScript : MonoBehaviour
 {
     private bool isNightmare = false;
-    private float dreamTimer = 10.0f;
-    private int dreamPoint = 0;
-    private int dreamType = 1;
+    private float dreamTimer = 5.0f;
+    private int dreamPoint = 1;
+    private int dreamType;
     private string dreamText = "Test Dream";
-    private int attackDreamType = -1;
+    private readonly int attackDreamType = -1;
+    private string dreamSpriteName = "";
     public GameObject GODream;
+    public GameObject objItem;
     public bool destroyDream = false;
+
+    public enum DreamType
+    {
+        Bad = -1,
+        Neutral = 0,
+        Good = 1
+    }
     public DreamClassScript()
     {
         dreamText = "Test Dream";
@@ -67,6 +76,30 @@ public class DreamClassScript : MonoBehaviour
         // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        dreamSpriteName = GetComponent<SpriteRenderer>().sprite.name;
+        if (dreamSpriteName.Contains("Neut"))
+        {
+            dreamType = (int)DreamType.Neutral;
+        }
+        else
+        {
+            if (dreamSpriteName.Contains("Good"))
+            {
+                dreamType = (int)DreamType.Good;
+            }
+            else
+            {
+                if (dreamSpriteName.Contains("Bad"))
+                {
+                    dreamType = (int)DreamType.Bad;
+                }
+                else
+                {
+                    dreamType = (int)DreamType.Neutral;
+                }
+            }
+        }
+        Debug.Log(dreamType.ToString());
         //DreamBehaviour();
         //Destroy(GODream, 2.0f);
         //Debug.Log(dreamPoint.ToString());
@@ -76,11 +109,6 @@ public class DreamClassScript : MonoBehaviour
     void Update()
     {
         dreamTimer -= Time.deltaTime;
-        Collider2D teddyBearObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TeddyBear"));
-        if (teddyBearObject != null)
-        {
-            Destroy(gameObject);
-        }
 
         if (dreamType == attackDreamType)
         {
@@ -100,28 +128,25 @@ public class DreamClassScript : MonoBehaviour
                 Debug.Log(dreamPoint.ToString());
             }
         }
-            Debug.Log(dreamTimer.ToString());
+
+        
+            //Debug.Log(dreamTimer.ToString());
     }
 
-    public void DreamBehaviour()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        while (dreamTimer != 0.0f && dreamType != attackDreamType)
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                attackDreamType = 2;
-            }
+        objItem = collision.gameObject;
+        //Collider2D teddyBearObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TeddyBear"));
+        //if (teddyBearObject != null)
+        //{
+        Destroy(gameObject);
+        //}
 
-            if (dreamType == attackDreamType)
-            {
-                Destroy(GODream);
-                Debug.Log("Correct Dream Type attack! You get 1 points!");
-                Debug.Log(dreamPoint.ToString());
-            }
-            else
-            {
-                Debug.Log("The Dream Type is not the correct one to destroy");
-            }
+        if (objItem != null)
+        {
+            Debug.Log("Object Hit!!");
+            Debug.Log("This is the object Dream");
+            Debug.Log(objItem.name);
         }
     }
 }
