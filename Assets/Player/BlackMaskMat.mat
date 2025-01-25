@@ -47,7 +47,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _CursorPosition: {r: 0.35515428, g: -0.13177252, b: 0, a: 0}
+    - _CursorPosition: {r: 0.5676983, g: -0.17310989, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
