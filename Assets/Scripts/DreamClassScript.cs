@@ -8,15 +8,14 @@ using UnityEditor;
 public class DreamClassScript : MonoBehaviour
 {
     private bool isNightmare = false;
-    private float dreamTimer = 10.0f;
-    private int dreamPoint = 1;
+    private float dreamTimer = 5.0f;
+    public int dreamPoint = 1;
     private int dreamType;
     private string dreamText = "Test Dream";
     private int attackDreamType = -1;
     private string dreamSpriteName = "";
     public GameObject GODream;
-    public GameObject objItem;
-    public bool destroyDream = false;
+    public GameObject GOItem;
 
     public enum DreamType
     {
@@ -99,7 +98,7 @@ public class DreamClassScript : MonoBehaviour
                 }
             }
         }
-        Debug.Log(dreamType.ToString());
+        //Debug.Log(dreamType.ToString());
 
     }
 
@@ -107,17 +106,6 @@ public class DreamClassScript : MonoBehaviour
     void Update()
     {
         dreamTimer -= Time.deltaTime;
-
-        if (dreamType == attackDreamType)
-        {
-            Destroy(GODream);
-            dreamPoint = 1;
-            Debug.Log("Correct Dream Type attack! You get 1 points!");
-            Debug.Log(dreamPoint.ToString());
-            destroyDream = true;
-        }
-        else
-        {
             if (dreamTimer <= 0.0f)
             {
                 Destroy(GODream);
@@ -125,7 +113,6 @@ public class DreamClassScript : MonoBehaviour
                 Debug.Log("The Dream Type is not the correct one to destroy -1 points");
                 Debug.Log(dreamPoint.ToString());
             }
-        }
 
 
         //Debug.Log(dreamTimer.ToString());
@@ -133,7 +120,15 @@ public class DreamClassScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        objItem = collision.gameObject;
-        Destroy(gameObject);
+        GOItem = collision.gameObject;
+        if (dreamType == attackDreamType)
+        {
+            GOItem = collision.gameObject;
+            dreamPoint = 1;
+            Destroy(GODream);
+            Debug.Log("Correct Dream Type attack! You get 1 points!");
+            Debug.Log(dreamPoint.ToString());
+
+        }
     }
 }
