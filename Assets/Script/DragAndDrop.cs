@@ -8,13 +8,23 @@ public class DragAndDrop : MonoBehaviour
     private bool isDragged=false;
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
-   
-    
+    private string objectSpriteName = "";
+
+    public enum ObjectType
+    {
+        Alcohol = -2,
+        Tea = -1,
+        Water = 0,
+        Teddy = 1
+    }
+
     private void OnMouseDown()
     {
         isDragged=true;
         mouseDragStartPosition=Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        spriteDragStartPosition=transform.localPosition;
+        objectSpriteName = GetComponent<SpriteRenderer>().sprite.name;
+        Debug.Log(objectSpriteName);
+        spriteDragStartPosition =transform.localPosition;
     }
 
     private void OnMouseDrag()

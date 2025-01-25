@@ -12,7 +12,7 @@ public class DreamClassScript : MonoBehaviour
     private int dreamPoint = 1;
     private int dreamType;
     private string dreamText = "Test Dream";
-    private int attackDreamType = -1;
+    private readonly int attackDreamType = -1;
     private string dreamSpriteName = "";
     public GameObject GODream;
     public bool destroyDream = false;
