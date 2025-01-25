@@ -8,7 +8,7 @@ using UnityEditor;
 public class DreamClassScript : MonoBehaviour
 {
     private bool isNightmare = false;
-    private float dreamTimer = 5.0f;
+    private float dreamTimer = 10.0f;
     private int dreamPoint = 1;
     private int dreamType;
     private string dreamText = "Test Dream";
@@ -100,9 +100,7 @@ public class DreamClassScript : MonoBehaviour
             }
         }
         Debug.Log(dreamType.ToString());
-        //DreamBehaviour();
-        //Destroy(GODream, 2.0f);
-        //Debug.Log(dreamPoint.ToString());
+
     }
 
     // Update is called once per frame
@@ -136,17 +134,6 @@ public class DreamClassScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         objItem = collision.gameObject;
-        //Collider2D teddyBearObject = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TeddyBear"));
-        //if (teddyBearObject != null)
-        //{
         Destroy(gameObject);
-        //}
-
-        if (objItem != null)
-        {
-            Debug.Log("Object Hit!!");
-            Debug.Log("This is the object Dream");
-            Debug.Log(objItem.name);
-        }
     }
 }
