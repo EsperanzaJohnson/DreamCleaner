@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Game_jam_background_and_children 1_0: 2063438971127764267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

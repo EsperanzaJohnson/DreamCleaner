@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Neuteral_dream_bubble_0: 7450347706601462786
+      Neuteral_dream_bubble_1: 2467882184089734059
+      Neuteral_dream_bubble_2: 3717516530650715533
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

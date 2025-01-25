@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Good_dream_bubble_0: -466827159175399883
+      Good_dream_bubble_1: -1933140832393620124
+      Good_dream_bubble_2: 6498919792836242119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
