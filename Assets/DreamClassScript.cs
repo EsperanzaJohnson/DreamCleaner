@@ -105,23 +105,23 @@ public class DreamClassScript : MonoBehaviour
 
     public void DreamBehaviour()
     {
-        while (dreamTimer != 0.0f && dreamType != attackDreamType)
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                attackDreamType = 2;
-            }
+        //while (dreamTimer != 0.0f && dreamType != attackDreamType)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.W))
+        //    {
+        //        attackDreamType = 2;
+        //    }
 
-            if (dreamType == attackDreamType)
-            {
-                Destroy(GODream);
-                Debug.Log("Correct Dream Type attack! You get 1 points!");
-                Debug.Log(dreamPoint.ToString());
-            }
-            else
-            {
-                Debug.Log("The Dream Type is not the correct one to destroy");
-            }
-        }
+        //    if (dreamType == attackDreamType)
+        //    {
+        //        Destroy(GODream);
+        //        Debug.Log("Correct Dream Type attack! You get 1 points!");
+        //        Debug.Log(dreamPoint.ToString());
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("The Dream Type is not the correct one to destroy");
+        //    }
+        //}
     }
 }
