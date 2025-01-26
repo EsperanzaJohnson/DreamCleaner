@@ -109,7 +109,7 @@ public class DreamClassScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    dreamTimer -= Time.deltaTime;
+        dreamTimer -= Time.deltaTime;
         if (dreamTimer <= 0.0f)
         {
             Destroy(GODream);
