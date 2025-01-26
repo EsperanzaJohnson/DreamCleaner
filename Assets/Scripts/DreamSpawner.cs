@@ -93,8 +93,8 @@ public class DreamSpawner : MonoBehaviour
         {
             Destroy(Dream);
             totalPoints += -1;
-            Debug.Log("Dream Spawner points:");
-            Debug.Log(totalPoints.ToString());
+            //Debug.Log("Dream Spawner points:");
+            //Debug.Log(totalPoints.ToString());
             CurrentDreams--;
             AvailablePositions.Add(positionIndex);
         }
@@ -130,8 +130,8 @@ public class DreamCollisionHandler : MonoBehaviour
         dropItem = collision.gameObject;
         itemType = dropItem.GetComponent<DragAndDrop>().objectType;
         dreamType = spawner.dreamType;
-        Debug.Log("Dream Type Hit is:");
-        Debug.Log(dreamType.ToString());
+        //Debug.Log("Dream Type Hit is:");
+        //Debug.Log(dreamType.ToString());
 
         if (spawner != null && dreamType==itemType)
         {
