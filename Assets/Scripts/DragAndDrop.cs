@@ -37,6 +37,15 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Dream"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
+
     private void OnMouseDrag()
     {
         if(isDragged)
@@ -47,8 +56,14 @@ public class DragAndDrop : MonoBehaviour
             if (trashCan != null)
             {
                 Destroy(gameObject);
+
+                if (this.gameObject.CompareTag("Dream"))
+                {
+                    Destroy(this.gameObject);
+                }
                 Spawner.currentlySpawned--;
             }
+            
         }
     }
 
@@ -56,6 +71,8 @@ public class DragAndDrop : MonoBehaviour
     {
         isDragged=false;
     }
+
+    
     // private void OnTriggerEnter2D(Collider2D collision)
     // {
     //     objItem = collision.gameObject;
