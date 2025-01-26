@@ -23,6 +23,7 @@ public class spawnItems : MonoBehaviour
     void Start()
     {
 
+
     }
 
 
@@ -33,6 +34,7 @@ public class spawnItems : MonoBehaviour
         {
             spawnItem(possibleItems[Random.Range(0, possibleItems.Count)]);
             currentlySpawned++;
+            
         }
 
     }

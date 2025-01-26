@@ -392,6 +392,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8928165746321554163, guid: e538ac2a1cc8bb84d9f1c86b33e886f9, type: 3}
+      propertyPath: spawnSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 792293e56300cbb4390b46a75fd3d642, type: 3}
+    - target: {fileID: 8928165746321554163, guid: e538ac2a1cc8bb84d9f1c86b33e886f9, type: 3}
+      propertyPath: destroyedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1772ab59304d32b4a8e9c454b01dff2f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
