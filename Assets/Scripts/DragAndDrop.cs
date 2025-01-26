@@ -16,8 +16,8 @@ public class DragAndDrop : MonoBehaviour
 
     public enum ObjectType
     {
-        Belt = -10,
-        Binky = -1,
+        Alcohol = -2,
+        Tea = -1,
         Water = 0,
         Teddy = 1
     }
@@ -31,32 +31,9 @@ public class DragAndDrop : MonoBehaviour
 
         if (objectSpriteName.Contains("Plush"))
         {
-            objectType = (int)ObjectType.Teddy;
-            Debug.Log("Object Type");
-            Debug.Log(objectType.ToString());
-        }
-        if (objectSpriteName.Contains("belt"))
-        {
-            objectType = (int)ObjectType.Belt;
-            Debug.Log("Object Type");
-            Debug.Log(objectType.ToString());
-        }
-        if (objectSpriteName.Contains("water"))
-        {
             objectType = (int)ObjectType.Water;
             Debug.Log("Object Type");
             Debug.Log(objectType.ToString());
-        }
-        if (objectSpriteName.Contains("binky"))
-        {
-            objectType = (int)ObjectType.Binky;
-            Debug.Log("Object Type");
-            Debug.Log(objectType.ToString());
-        }
-        else
-        {
-            //Test value
-            objectType = (int)ObjectType.Water;
         }
     }
 
@@ -66,26 +43,28 @@ public class DragAndDrop : MonoBehaviour
         {
             transform.localPosition=spriteDragStartPosition+(Camera.main.ScreenToWorldPoint(Input.mousePosition)-mouseDragStartPosition);
 
+            Collider2D trashCan = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TrashCan"));
+            if (trashCan != null)
+            {
+                Destroy(gameObject);
+                Spawner.currentlySpawned--;
+            }
+            
         }
     }
 
     private void OnMouseUp()
     {
         isDragged=false;
-        
-        Collider2D trashCan = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TrashCan"));
-        if (trashCan != null)
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("TrashCan"))
         {
             Destroy(gameObject);
             Spawner.currentlySpawned--;
         }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        objItem = collision.gameObject;
-        //Debug.Log("ON TRIGGER DRAG AND DROP");
-        Destroy(gameObject);
-        Spawner.currentlySpawned--;
     }
 
 }
