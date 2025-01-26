@@ -16,8 +16,8 @@ public class DragAndDrop : MonoBehaviour
 
     public enum ObjectType
     {
-        Alcohol = -2,
-        Tea = -1,
+        Belt = -10,
+        Binky = -1,
         Water = 0,
         Teddy = 1
     }
@@ -31,9 +31,37 @@ public class DragAndDrop : MonoBehaviour
 
         if (objectSpriteName.Contains("Plush"))
         {
-            objectType = (int)ObjectType.Water;
-            Debug.Log("Object Type");
-            Debug.Log(objectType.ToString());
+            objectType = (int)ObjectType.Teddy;
+        }
+        else
+        {
+            if (objectSpriteName.Contains("water"))
+            {
+                objectType = (int)ObjectType.Water;
+            }
+            else
+            {
+                if (objectSpriteName.Contains("pacifier"))
+                {
+                    objectType = (int)ObjectType.Binky;
+                }
+                else
+                {
+                    if (objectSpriteName.Contains("belt"))
+                    {
+                        objectType = (int)ObjectType.Belt;
+                    }
+                }
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Dream"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
         }
     }
 
@@ -46,12 +74,12 @@ public class DragAndDrop : MonoBehaviour
             Collider2D trashCan = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TrashCan"));
             if (trashCan != null)
             {
-                AudioSource audioSource = trashCan.GetComponent<AudioSource>();
-                if (audioSource != null)
-                {
-                    audioSource.Play();
-                }
                 Destroy(gameObject);
+
+                if (this.gameObject.CompareTag("Dream"))
+                {
+                    Destroy(this.gameObject);
+                }
                 Spawner.currentlySpawned--;
             }
             
@@ -63,14 +91,12 @@ public class DragAndDrop : MonoBehaviour
         isDragged=false;
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("TrashCan"))
-        {
-            
-            Destroy(gameObject);
-            Spawner.currentlySpawned--;
-        }
+        objItem = collision.gameObject;
+        Destroy(gameObject);
+        Spawner.currentlySpawned--;
     }
 
 }

@@ -11,7 +11,7 @@ public class spawnItems : MonoBehaviour
     private void spawnItem(GameObject item)
     {
         GameObject spawnedItem = Instantiate(item);
-        spawnedItem.transform.position = new Vector2(Random.Range(-9, 9), Random.Range(-4, 4)); 
+        spawnedItem.transform.position = new Vector2(Random.Range(-8, 8), Random.Range(-4, 4)); 
         DragAndDrop clickedScript = spawnedItem.GetComponent<DragAndDrop>();
         if (clickedScript != null)
         {
