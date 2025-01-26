@@ -16,8 +16,8 @@ public class DragAndDrop : MonoBehaviour
 
     public enum ObjectType
     {
-        Alcohol = -2,
-        Tea = -1,
+        Belt = -10,
+        Binky = -1,
         Water = 0,
         Teddy = 1
     }
@@ -31,9 +31,28 @@ public class DragAndDrop : MonoBehaviour
 
         if (objectSpriteName.Contains("Plush"))
         {
-            objectType = (int)ObjectType.Water;
-            Debug.Log("Object Type");
-            Debug.Log(objectType.ToString());
+            objectType = (int)ObjectType.Teddy;
+        }
+        else
+        {
+            if (objectSpriteName.Contains("water"))
+            {
+                objectType = (int)ObjectType.Water;
+            }
+            else
+            {
+                if (objectSpriteName.Contains("pacifier"))
+                {
+                    objectType = (int)ObjectType.Binky;
+                }
+                else
+                {
+                    if (objectSpriteName.Contains("belt"))
+                    {
+                        objectType = (int)ObjectType.Belt;
+                    }
+                }
+            }
         }
     }
 

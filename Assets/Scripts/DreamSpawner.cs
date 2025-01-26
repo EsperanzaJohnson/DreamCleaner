@@ -16,7 +16,7 @@ public class DreamSpawner : MonoBehaviour
     public float spawnInterval = 2.0f; 
     private List<int> AvailablePositions;
     private float timer;
-    private float DreamLifetime=10.0f;
+    private float DreamLifetime=3.0f;
 
     public Vector2[] spawnPositions = new Vector2[]
     {
@@ -58,12 +58,24 @@ public class DreamSpawner : MonoBehaviour
         int positionIndex = AvailablePositions[randomIndex];
         int randomDreamPrefab = Random.Range(0, 3);
 
-        if (randomDreamPrefab == 0) { newSprite = Instantiate(spritePrefab, spawnPositions[positionIndex], Quaternion.identity); }
+        if (randomDreamPrefab == 0) 
+        { 
+            newSprite = Instantiate(spritePrefab, spawnPositions[positionIndex], Quaternion.identity);
+            dreamType = 0;
+        }
 
         else
         {
-            if (randomDreamPrefab == 1) { newSprite = Instantiate(spritePrefabGood, spawnPositions[positionIndex], Quaternion.identity); }
-            else { newSprite = Instantiate(spritePrefabBad, spawnPositions[positionIndex], Quaternion.identity); }
+            if (randomDreamPrefab == 1) 
+            { 
+                newSprite = Instantiate(spritePrefabGood, spawnPositions[positionIndex], Quaternion.identity); 
+                dreamType = 1;
+            }
+            else 
+            { 
+                newSprite = Instantiate(spritePrefabBad, spawnPositions[positionIndex], Quaternion.identity);
+                dreamType = -1;
+            }
         }
         //GameObject newSprite = Instantiate(spritePrefab, spawnPositions[positionIndex], Quaternion.identity);
         AvailablePositions.RemoveAt(randomIndex);
@@ -80,7 +92,6 @@ public class DreamSpawner : MonoBehaviour
         if (Dream != null)
         {
             Destroy(Dream);
-            //Debug.Log("DreamSpawner: The Dream Type is not the correct one to destroy -1 points");
             totalPoints += -1;
             Debug.Log("Dream Spawner points:");
             Debug.Log(totalPoints.ToString());
@@ -88,10 +99,11 @@ public class DreamSpawner : MonoBehaviour
             AvailablePositions.Add(positionIndex);
         }
     }
-     public void DestroyDreamImmediately(int positionIndex, GameObject Dream)
+     public void DestroyDreamImmediately(int positionIndex, GameObject Dream, int points)
     {
         StopCoroutine(DestroySpriteAfterTime(Dream, positionIndex));
         Destroy(Dream);
+        totalPoints += points;
         CurrentDreams--;
         AvailablePositions.Add(positionIndex);
     }
@@ -99,8 +111,13 @@ public class DreamSpawner : MonoBehaviour
 
 public class DreamCollisionHandler : MonoBehaviour
 {
+    public GameObject dropItem;
+    //public GameObject dreamElement;
     private DreamSpawner spawner;
     private int positionIndex;
+    private int itemType;
+    private int dreamType;
+    private int dreamPoints;
 
     public void SetSpawner(DreamSpawner spawnerReference, int index, float timer)
     {
@@ -110,10 +127,24 @@ public class DreamCollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (spawner != null)
+        dropItem = collision.gameObject;
+        itemType = dropItem.GetComponent<DragAndDrop>().objectType;
+        dreamType = spawner.dreamType;
+        Debug.Log("Dream Type Hit is:");
+        Debug.Log(dreamType.ToString());
+
+        if (spawner != null && dreamType==itemType)
         {
-            spawner.DestroyDreamImmediately(positionIndex, gameObject);
+            spawner.DestroyDreamImmediately(positionIndex, gameObject, 1);
             spawner.CurrentDreams--; 
+        }
+        else
+        {
+            if(spawner != null && itemType == -10)
+            {
+                spawner.DestroyDreamImmediately(positionIndex, gameObject, -10);
+                spawner.CurrentDreams--;
+            }
         }
     }
 }

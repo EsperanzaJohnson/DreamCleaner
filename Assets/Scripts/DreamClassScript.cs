@@ -109,45 +109,45 @@ public class DreamClassScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dreamTimer -= Time.deltaTime;
-        if (dreamTimer <= 0.0f)
-        {
-            Destroy(GODream);
-            //DreamSpawner.currentlySpawned--;
-            dreamPoint = -1;
-            totalPoints += dreamPoint;
-            Debug.Log("Total points local");
-            Debug.Log(totalPoints.ToString());
-            globalPoints.totalPoints+= dreamPoint;
-            Debug.Log("Dream Class: The Dream Type is not the correct one to destroy -1 points");
-            Debug.Log(dreamPoint.ToString());
-            Debug.Log("Total Dream Points: ");
-            Debug.Log(globalPoints.totalPoints.ToString());
-        }
+        //dreamTimer -= Time.deltaTime;
+        //if (dreamTimer <= 0.0f)
+        //{
+        //    Destroy(GODream);
+        //    //DreamSpawner.currentlySpawned--;
+        //    dreamPoint = -1;
+        //    totalPoints += dreamPoint;
+        //    Debug.Log("Total points local");
+        //    Debug.Log(totalPoints.ToString());
+        //    globalPoints.totalPoints+= dreamPoint;
+        //    Debug.Log("Dream Class: The Dream Type is not the correct one to destroy -1 points");
+        //    Debug.Log(dreamPoint.ToString());
+        //    Debug.Log("Total Dream Points: ");
+        //    Debug.Log(globalPoints.totalPoints.ToString());
+        //}
 
 
-        //Debug.Log(dreamTimer.ToString());
+        ////Debug.Log(dreamTimer.ToString());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GOItem = collision.gameObject;
-        attackDreamType = GOItem.GetComponent<DragAndDrop>().objectType;
-        Debug.Log("Attack Dream Type from GOItem");
-        Debug.Log(attackDreamType.ToString()); 
-        if (dreamType == attackDreamType)
-        {
-            GOItem = collision.gameObject;
-            dreamPoint = 1;
-            globalPoints.totalPoints += dreamPoint;
-            totalPoints += dreamPoint;
-            Debug.Log("Total Points Local");
-            Debug.Log(totalPoints.ToString());
-            Destroy(GODream);
-            DreamSpawner.currentlySpawned--;
-            Debug.Log("Correct Dream Type attack! You get 1 points!");
-            Debug.Log(dreamPoint.ToString());
+        //GOItem = collision.gameObject;
+        //attackDreamType = GOItem.GetComponent<DragAndDrop>().objectType;
+        //Debug.Log("Attack Dream Type from GOItem");
+        //Debug.Log(attackDreamType.ToString()); 
+        //if (dreamType == attackDreamType)
+        //{
+        //    GOItem = collision.gameObject;
+        //    dreamPoint = 1;
+        //    globalPoints.totalPoints += dreamPoint;
+        //    totalPoints += dreamPoint;
+        //    Debug.Log("Total Points Local");
+        //    Debug.Log(totalPoints.ToString());
+        //    Destroy(GODream);
+        //    DreamSpawner.currentlySpawned--;
+        //    Debug.Log("Correct Dream Type attack! You get 1 points!");
+        //    Debug.Log(dreamPoint.ToString());
 
-        }
+        //}
     }
 }
