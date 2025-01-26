@@ -1479,7 +1479,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxDreams: 4
   CurrentDreams: 0
+  newSprite: {fileID: 0}
   spritePrefab: {fileID: 1327357958700736737, guid: 5d98b051245393a47b073d2d6e49d46a, type: 3}
+  spritePrefabGood: {fileID: 619936455277087686, guid: 9642a83c68da90947bba9372b91e89b8, type: 3}
+  spritePrefabBad: {fileID: 4101640029984709202, guid: 8d8dad2446ecd2d49989a6fe92bf6a31, type: 3}
   spawnInterval: 2
   spawnPositions:
   - {x: -2.142833, y: 4.02131}

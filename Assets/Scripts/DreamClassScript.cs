@@ -113,13 +113,13 @@ public class DreamClassScript : MonoBehaviour
         if (dreamTimer <= 0.0f)
         {
             Destroy(GODream);
-            DreamSpawner.currentlySpawned--;
+            //DreamSpawner.currentlySpawned--;
             dreamPoint = -1;
             totalPoints += dreamPoint;
-            Debug.Log("Total Points Local");
+            Debug.Log("Total points local");
             Debug.Log(totalPoints.ToString());
             globalPoints.totalPoints+= dreamPoint;
-            Debug.Log("The Dream Type is not the correct one to destroy -1 points");
+            Debug.Log("Dream Class: The Dream Type is not the correct one to destroy -1 points");
             Debug.Log(dreamPoint.ToString());
             Debug.Log("Total Dream Points: ");
             Debug.Log(globalPoints.totalPoints.ToString());
@@ -135,11 +135,6 @@ public class DreamClassScript : MonoBehaviour
         attackDreamType = GOItem.GetComponent<DragAndDrop>().objectType;
         Debug.Log("Attack Dream Type from GOItem");
         Debug.Log(attackDreamType.ToString()); 
-        //Debug.Log(GOItem.gameObject.name);
-        //if ((GOItem.gameObject.name.Contains("1")))
-        //{
-        //    attackDreamType = 0;
-        //}
         if (dreamType == attackDreamType)
         {
             GOItem = collision.gameObject;

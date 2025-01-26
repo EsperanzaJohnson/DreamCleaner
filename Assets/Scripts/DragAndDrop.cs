@@ -72,12 +72,12 @@ public class DragAndDrop : MonoBehaviour
         isDragged=false;
     }
 
-    
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     objItem = collision.gameObject;
-    //     Destroy(gameObject);
-    //     Spawner.currentlySpawned--;
-    // }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        objItem = collision.gameObject;
+        Destroy(gameObject);
+        Spawner.currentlySpawned--;
+    }
 
 }
