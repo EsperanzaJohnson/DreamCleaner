@@ -1748,7 +1748,7 @@ MonoBehaviour:
   dreamInstance: {fileID: 321169906}
   gamePoints: 0
   timerText: {fileID: 1296536888}
-  remainingTime: 300
+  remainingTime: 60
 --- !u!114 &1296536888
 MonoBehaviour:
   m_ObjectHideFlags: 0
