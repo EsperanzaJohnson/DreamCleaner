@@ -43,25 +43,24 @@ public class DragAndDrop : MonoBehaviour
         {
             transform.localPosition=spriteDragStartPosition+(Camera.main.ScreenToWorldPoint(Input.mousePosition)-mouseDragStartPosition);
 
+            Collider2D trashCan = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TrashCan"));
+            if (trashCan != null)
+            {
+                Destroy(gameObject);
+                Spawner.currentlySpawned--;
+            }
         }
     }
 
     private void OnMouseUp()
     {
         isDragged=false;
-        
-        Collider2D trashCan = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TrashCan"));
-        if (trashCan != null)
-        {
-            Destroy(gameObject);
-            Spawner.currentlySpawned--;
-        }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        objItem = collision.gameObject;
-        Destroy(gameObject);
-        Spawner.currentlySpawned--;
-    }
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     objItem = collision.gameObject;
+    //     Destroy(gameObject);
+    //     Spawner.currentlySpawned--;
+    // }
 
 }

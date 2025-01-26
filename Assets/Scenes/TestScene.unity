@@ -523,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dreamPoint: 1
   GODream: {fileID: 572358876}
+  dadItem: {fileID: 0}
   GOItem: {fileID: 0}
 --- !u!212 &572358878
 SpriteRenderer:
