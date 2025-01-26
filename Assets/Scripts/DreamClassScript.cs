@@ -9,7 +9,8 @@ public class DreamClassScript : MonoBehaviour
 {
     private bool isNightmare = false;
     private float dreamTimer = 5.0f;
-    public int dreamPoint = 1;
+    private int dreamPoint = 0;
+    //public int totalPoints = 0;
     private int dreamType;
     private string dreamText = "Test Dream";
     private int attackDreamType = -1;
@@ -17,6 +18,8 @@ public class DreamClassScript : MonoBehaviour
     public GameObject GODream;
     public DragAndDrop dadItem;
     public GameObject GOItem;
+    public spawnDreams DreamSpawner;
+    public TotalPoints totalPoints;
 
     public enum DreamType
     {
@@ -107,13 +110,17 @@ public class DreamClassScript : MonoBehaviour
     void Update()
     {
         dreamTimer -= Time.deltaTime;
-            if (dreamTimer <= 0.0f)
-            {
-                Destroy(GODream);
-                dreamPoint = -1;
-                Debug.Log("The Dream Type is not the correct one to destroy -1 points");
-                Debug.Log(dreamPoint.ToString());
-            }
+        if (dreamTimer <= 0.0f)
+        {
+            Destroy(GODream);
+            DreamSpawner.currentlySpawned--;
+            dreamPoint = -1;
+            totalPoints.totalPoints += dreamPoint;
+            Debug.Log("The Dream Type is not the correct one to destroy -1 points");
+            Debug.Log(dreamPoint.ToString());
+            Debug.Log("Total Dream Points: ");
+            Debug.Log(totalPoints.totalPoints.ToString());
+        }
 
 
         //Debug.Log(dreamTimer.ToString());
@@ -122,20 +129,21 @@ public class DreamClassScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GOItem = collision.gameObject;
+        attackDreamType = GOItem.GetComponent<DragAndDrop>().objectType;
+        Debug.Log("Attack Dream Type from GOItem");
+        Debug.Log(attackDreamType.ToString()); 
         //Debug.Log(GOItem.gameObject.name);
-        if ((GOItem.gameObject.name.Contains("1")))
-        {
-            attackDreamType = 0;
-        }
-
-        {
-            
-        }
+        //if ((GOItem.gameObject.name.Contains("1")))
+        //{
+        //    attackDreamType = 0;
+        //}
         if (dreamType == attackDreamType)
         {
             GOItem = collision.gameObject;
             dreamPoint = 1;
+            totalPoints.totalPoints += dreamPoint;
             Destroy(GODream);
+            DreamSpawner.currentlySpawned--;
             Debug.Log("Correct Dream Type attack! You get 1 points!");
             Debug.Log(dreamPoint.ToString());
 
