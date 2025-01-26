@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
@@ -22,11 +23,11 @@ public class TimerScript : MonoBehaviour
             remainingTime = 0;
             if (gamePoints >= 0)
             {
-                //SHOW WIN SCREEN
+                SceneManager.LoadScene(2);
             }
             else
             {
-                //SHOW LOSE SCREEN
+                SceneManager.LoadScene(3);
             }
         }
         int minutes = Mathf.FloorToInt(remainingTime / 60);
