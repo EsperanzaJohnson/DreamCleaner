@@ -16,8 +16,8 @@ public class DragAndDrop : MonoBehaviour
 
     public enum ObjectType
     {
-        Alcohol = -2,
-        Tea = -1,
+        Belt = -10,
+        Binky = -1,
         Water = 0,
         Teddy = 1
     }
@@ -31,9 +31,32 @@ public class DragAndDrop : MonoBehaviour
 
         if (objectSpriteName.Contains("Plush"))
         {
+            objectType = (int)ObjectType.Teddy;
+            Debug.Log("Object Type");
+            Debug.Log(objectType.ToString());
+        }
+        if (objectSpriteName.Contains("belt"))
+        {
+            objectType = (int)ObjectType.Belt;
+            Debug.Log("Object Type");
+            Debug.Log(objectType.ToString());
+        }
+        if (objectSpriteName.Contains("water"))
+        {
             objectType = (int)ObjectType.Water;
             Debug.Log("Object Type");
             Debug.Log(objectType.ToString());
+        }
+        if (objectSpriteName.Contains("binky"))
+        {
+            objectType = (int)ObjectType.Binky;
+            Debug.Log("Object Type");
+            Debug.Log(objectType.ToString());
+        }
+        else
+        {
+            //Test value
+            objectType = (int)ObjectType.Water;
         }
     }
 
@@ -60,6 +83,7 @@ public class DragAndDrop : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         objItem = collision.gameObject;
+        //Debug.Log("ON TRIGGER DRAG AND DROP");
         Destroy(gameObject);
         Spawner.currentlySpawned--;
     }
