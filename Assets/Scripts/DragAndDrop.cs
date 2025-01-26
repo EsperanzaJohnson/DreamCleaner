@@ -17,7 +17,7 @@ public class DragAndDrop : MonoBehaviour
     public enum ObjectType
     {
         Belt = -10,
-        Binky = -1,
+        Music = -1,
         Water = 0,
         Teddy = 1
     }
@@ -29,7 +29,7 @@ public class DragAndDrop : MonoBehaviour
         objectSpriteName = GetComponent<SpriteRenderer>().sprite.name;
         spriteDragStartPosition = transform.localPosition;
 
-        if (objectSpriteName.Contains("Plush"))
+        if (objectSpriteName.Contains("Bear"))
         {
             objectType = (int)ObjectType.Teddy;
         }
@@ -41,13 +41,13 @@ public class DragAndDrop : MonoBehaviour
             }
             else
             {
-                if (objectSpriteName.Contains("pacifier"))
+                if (objectSpriteName.Contains("Music"))
                 {
-                    objectType = (int)ObjectType.Binky;
+                    objectType = (int)ObjectType.Music;
                 }
                 else
                 {
-                    if (objectSpriteName.Contains("belt"))
+                    if (objectSpriteName.Contains("Belt"))
                     {
                         objectType = (int)ObjectType.Belt;
                     }

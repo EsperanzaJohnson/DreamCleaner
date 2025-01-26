@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Glass_of_water_sprite_0: 8587622348492578412
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

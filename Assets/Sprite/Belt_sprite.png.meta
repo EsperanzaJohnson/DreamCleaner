@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Belt_sprite_0: -5121654016460288934
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

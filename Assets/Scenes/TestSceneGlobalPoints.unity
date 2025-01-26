@@ -1194,6 +1194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba63d6716a65414a99e2d7c07d3e90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamInstance: {fileID: 1408300991}
+  gamePoints: 0
   timerText: {fileID: 1296536888}
   remainingTime: 300
 --- !u!114 &1296536888
@@ -1483,6 +1485,8 @@ MonoBehaviour:
   spritePrefab: {fileID: 1327357958700736737, guid: 5d98b051245393a47b073d2d6e49d46a, type: 3}
   spritePrefabGood: {fileID: 619936455277087686, guid: 9642a83c68da90947bba9372b91e89b8, type: 3}
   spritePrefabBad: {fileID: 4101640029984709202, guid: 8d8dad2446ecd2d49989a6fe92bf6a31, type: 3}
+  dreamType: 0
+  totalPoints: 0
   spawnInterval: 2
   spawnPositions:
   - {x: -2.142833, y: 4.02131}

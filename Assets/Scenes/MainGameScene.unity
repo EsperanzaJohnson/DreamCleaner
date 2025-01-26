@@ -1745,6 +1745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba63d6716a65414a99e2d7c07d3e90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamInstance: {fileID: 321169906}
+  gamePoints: 0
   timerText: {fileID: 1296536888}
   remainingTime: 300
 --- !u!114 &1296536888
