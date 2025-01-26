@@ -455,6 +455,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &321169905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321169907}
+  - component: {fileID: 321169906}
+  m_Layer: 0
+  m_Name: DreamSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &321169906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321169905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086d297a88d1e4b4d877aed75b602697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDreams: 4
+  CurrentDreams: 0
+  newSprite: {fileID: 0}
+  spritePrefab: {fileID: 1327357958700736737, guid: 5d98b051245393a47b073d2d6e49d46a, type: 3}
+  spritePrefabGood: {fileID: 619936455277087686, guid: 9642a83c68da90947bba9372b91e89b8, type: 3}
+  spritePrefabBad: {fileID: 4101640029984709202, guid: 8d8dad2446ecd2d49989a6fe92bf6a31, type: 3}
+  dreamType: 0
+  totalPoints: 0
+  spawnInterval: 2
+  spawnPositions:
+  - {x: -2.142833, y: 4.02131}
+  - {x: 2.25, y: 4.07}
+  - {x: 6.83, y: 4.04}
+  - {x: -2.19, y: -2.73}
+  - {x: 2.39, y: -2.78}
+  - {x: 6.83, y: -2.59}
+--- !u!4 &321169907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321169905}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7877966, y: 0.6169611, z: -0.060485914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &429126668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,3 +2615,4 @@ SceneRoots:
   - {fileID: 1495287705}
   - {fileID: 677686160}
   - {fileID: 816094820}
+  - {fileID: 321169907}
