@@ -5,7 +5,7 @@ public class spawnItems : MonoBehaviour
 {
 
     public List<GameObject> possibleItems = new List<GameObject>();
-    public int maxItemAmount = 4;
+    public int maxItemAmount;
     public int currentlySpawned = 0;
 
     private void spawnItem(GameObject item)

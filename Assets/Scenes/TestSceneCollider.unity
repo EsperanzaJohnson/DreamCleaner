@@ -221,6 +221,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &492574829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492574831}
+  - component: {fileID: 492574830}
+  m_Layer: 0
+  m_Name: totalPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &492574830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492574829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed4317d767d655468fa29036e7cc49d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &492574831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492574829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593745837
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,11 +981,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6701971952871614880, guid: b6d5cb3ffa2dd2d488a9debc4a2c7ab8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6701971952871614880, guid: b6d5cb3ffa2dd2d488a9debc4a2c7ab8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6701971952871614880, guid: b6d5cb3ffa2dd2d488a9debc4a2c7ab8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1009,7 +1053,7 @@ MonoBehaviour:
   - {fileID: 4101640029984709202, guid: 8d8dad2446ecd2d49989a6fe92bf6a31, type: 3}
   - {fileID: 619936455277087686, guid: 9642a83c68da90947bba9372b91e89b8, type: 3}
   - {fileID: 3100010497947860721, guid: dd7ac881b457bf74a8e72feefa083e01, type: 3}
-  maxItemAmount: 12
+  maxItemAmount: 5
   currentlySpawned: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1022,3 +1066,4 @@ SceneRoots:
   - {fileID: 1495287705}
   - {fileID: 677686160}
   - {fileID: 1487327519561226299}
+  - {fileID: 492574831}
