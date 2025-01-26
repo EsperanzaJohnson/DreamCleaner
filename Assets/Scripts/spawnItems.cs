@@ -5,7 +5,7 @@ public class spawnItems : MonoBehaviour
 {
 
     public List<GameObject> possibleItems = new List<GameObject>();
-    public int maxItemAmount;
+    public int maxItemAmount = 4;
     public int currentlySpawned = 0;
 
     private void spawnItem(GameObject item)
@@ -29,7 +29,7 @@ public class spawnItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (currentlySpawned < maxItemAmount)
+        while (currentlySpawned < maxItemAmount && currentlySpawned >= 0)
         {
             spawnItem(possibleItems[Random.Range(0, possibleItems.Count)]);
             currentlySpawned++;

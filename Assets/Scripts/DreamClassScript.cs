@@ -18,6 +18,7 @@ public class DreamClassScript : MonoBehaviour
     public GameObject GODream;
     public DragAndDrop dadItem;
     public GameObject GOItem;
+    public spawnDreams DreamSpawner;
 
     public enum DreamType
     {
