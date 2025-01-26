@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 72ae56b25aefed343bccf9aef602b479
+guid: 9b4513c76a143ee47b4c86ae517c38db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5682774976547087253
-    second: toy_box_sprite_0
+      213: 8503760774476807141
+    second: Music_box_sprite_0
+  - first:
+      213: -7870569236280169240
+    second: Music_box_sprite_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +116,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toy_box_sprite_0
+      name: Music_box_sprite_0
       rect:
         serializedVersion: 2
         x: 0
+        y: 6
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb37999e5d630670800000000000000
+      internalID: 8503760774476807141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Music_box_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 4
         y: 0
-        width: 30
+        width: 16
         height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59361978bb54dde40800000000000000
-      internalID: 5682774976547087253
+      spriteID: 8ec276bcafe16c290800000000000000
+      internalID: -7870569236280169240
       vertices: []
       indices: 
       edges: []
@@ -147,8 +172,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      toy_box_sprite_0: 5682774976547087253
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

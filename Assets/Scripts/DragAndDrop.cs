@@ -46,6 +46,11 @@ public class DragAndDrop : MonoBehaviour
             Collider2D trashCan = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("TrashCan"));
             if (trashCan != null)
             {
+                AudioSource audioSource = trashCan.GetComponent<AudioSource>();
+                if (audioSource != null)
+                {
+                    audioSource.Play();
+                }
                 Destroy(gameObject);
                 Spawner.currentlySpawned--;
             }
@@ -62,6 +67,7 @@ public class DragAndDrop : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("TrashCan"))
         {
+            
             Destroy(gameObject);
             Spawner.currentlySpawned--;
         }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 72ae56b25aefed343bccf9aef602b479
+guid: 8e6e65096aea7fe42beac8c337fb3572
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5682774976547087253
-    second: toy_box_sprite_0
+      213: -5121654016460288934
+    second: Belt_sprite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toy_box_sprite_0
+      name: Belt_sprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
+        width: 22
         height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59361978bb54dde40800000000000000
-      internalID: 5682774976547087253
+      spriteID: a5c8e66ceca3ce8b0800000000000000
+      internalID: -5121654016460288934
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      toy_box_sprite_0: 5682774976547087253
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
